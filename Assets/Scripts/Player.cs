@@ -6,11 +6,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    //public float movementSpeed = 10f;
+    float movement = 0f;
+
+    float movementSpeed = 10f;
 
     Rigidbody2D rb;
 
-    float movement = 0f;
 
     // Use this for initialization
     void Start()
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = Input.GetAxis("Horizontal");
+        movement = Input.GetAxis("Horizontal") * movementSpeed;
     }
 
     void FixedUpdate()
